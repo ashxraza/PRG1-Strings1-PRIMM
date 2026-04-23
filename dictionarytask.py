@@ -9,13 +9,11 @@
 #   analyse_text("I love Python")
 #   →  {"words": 3, "characters": 11, "avg_word_length": 3.7}
 
-def analyse_text(text):
-    pass
 
 player1 = "rock"
 player2 = "scissors"
 
-player_1_moves + {
+player_1_moves = {
     "rock": ["scissors"]
 }
 
@@ -26,3 +24,26 @@ if player2 in player_1_moves[player1]:
     print("P1 wins")
 else:
     print("P2 wins")
+
+    # elif player1 == "scissors" and player2 == "paper" :
+    #     return "player1"
+    # elif player1 == "paper" and player2 == "rock":
+    #     return "player1"
+    # elif player1 == "rock" and player2 == "scissors":
+    #     return "player1"
+    # elif player1 == "rock" and player2 == "lizard" :
+    #      return "player1"
+    # elif player1 == "scissors" and player2 == "lizard" :
+    #      return "player1"
+    # elif player1 == "lizard" and player2 == "paper" :
+    #      return "player1"
+    # elif player1 == "spock" and player2 == "rock" :
+    #      return "player1"
+    # elif player1 == "spock" and player2 == "scissors" :
+    #      return "player1"
+    # elif player1 == "lizard" and player2 == "spock" :
+    #      return "player1"
+    # elif player1 == "paper" and player2 == "spock" :
+    #      return "player1"
+    # else:
+    #      return "player2"
