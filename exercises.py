@@ -24,7 +24,12 @@ fully is more valuable than rushing to the end.
 # at a time using a for loop, just like you would with a list.
 #
 # PREDICT: What will print_each_character("hello") print?
-#          How many lines will appear?
+#          How many lines will appear? 5
+#          h
+#          e
+#          l
+#          l
+#          o
 #
 # RUN: Call the function at the bottom of the file and check.
 #
@@ -54,8 +59,10 @@ def print_each_character(text):
 # ------------------------------------------------------------------------------
 
 def print_with_positions(text):
+    text = text[:1]
     for i in range(len(text)):
-        print(text[i])          # ← fix this line
+        print(f"{i}: {text[i]}")          # ← fix this line
+        #print(f"{i+1}: {text[i]}")          # ← fix this line
 
 
 # MAKE -------------------------------------------------------------------------
@@ -282,11 +289,12 @@ def analyse_text(text):
 if __name__ == "__main__":
 
     print("=== Activity 1: Iterating ===")
-    print_each_character("hello")
+    print_each_character("hi there")
     print()
     print_with_positions("hello")       # fix this above first
     print()
     print(string_length_manual("hello")) # complete this above first
+    print()
 
     print("\n=== Activity 2: Searching ===")
     print(count_letter_a("banana"))
