@@ -314,7 +314,8 @@ print(to_snake_case("MyVariableName"))
 #   →  {"words": 3, "characters": 11, "avg_word_length": 3.7}
 
 def analyse_text(text):
-    pass
+    
+    
 
 
 # ==============================================================================
