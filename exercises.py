@@ -59,7 +59,7 @@ def print_each_character(text):
 # ------------------------------------------------------------------------------
 
 def print_with_positions(text):
-    text = text[:1]
+    # text = text[:1]
     for i in range(len(text)):
         print(f"{i}: {text[i]}")          # ← fix this line
         #print(f"{i+1}: {text[i]}")          # ← fix this line
@@ -73,7 +73,11 @@ def print_with_positions(text):
 
 def string_length_manual(text):
     # TODO: count characters using a loop
-    pass
+    count = 0
+    for char in text:
+        count = count +1
+    return count
+    
 
 
 # ==============================================================================
@@ -91,9 +95,10 @@ def string_length_manual(text):
 
 def count_letter_a(text):
     count = 0
+    text = text.lower()
     for char in text:
         if char == 'a':
-            count += 1
+            count += 1    
     return count
 
 
@@ -107,6 +112,7 @@ def count_letter_a(text):
 # ------------------------------------------------------------------------------
 
 def count_vowels(text):
+    text = text.lower()
     vowels = "aeiou"
     count = 0
     for char in text:
@@ -129,7 +135,11 @@ def count_vowels(text):
 
 def is_all_digits(text):
     # TODO: loop through the string and check each character
-    pass
+    for char in text:
+        if not char.isdigit():
+            return False
+    return True
+
 
 
 # ==============================================================================
@@ -166,7 +176,7 @@ def remove_spaces(text):
     result = ""
     for char in text:
         if char == ' ':
-            result = result + char  # ← this line has the bug
+            result = result + text.replace(char, "")  # ← this line has the bug
     return result
 
 
@@ -184,7 +194,14 @@ def remove_spaces(text):
 
 def make_acronym(phrase):
     # TODO: split the phrase into words, then build the acronym
-    pass
+    phrase = phrase.split(" ") #split into a list
+    acronym = ""
+    for i in range(len(phrase)):
+        acronym += phrase[i][0].upper()
+    return acronym
+
+
+    
 
 
 # ==============================================================================
@@ -230,7 +247,12 @@ def reverse_string(text):
 
 def create_username(full_name):
     # TODO: build the username using slicing and string methods
-    pass
+        full_name = full_name.lower().split(" ")
+        the_full_name = full_name[0][0]
+        for i in range(1, len(full_name)):
+            the_full_name += full_name[i]
+        return the_full_name
+    
 
 
 # ==============================================================================
@@ -250,7 +272,13 @@ def create_username(full_name):
 #   is_palindrome("Level")    →  True   (case-insensitive)
 
 def is_palindrome(text):
-    pass
+    new_word = ''
+    for char in text:
+        new_word = char + new_word
+    return text == new_word # true if they are the same, false if not
+
+print(is_palindrome("hello"))
+print(is_palindrome("ada"))
 
 
 # CHALLENGE 2 ------------------------------------------------------------------
@@ -260,8 +288,18 @@ def is_palindrome(text):
 #   to_snake_case("myVariableName")   →  "my_variable_name"
 #   to_snake_case("helloWorld")       →  "hello_world"
 
+
+
 def to_snake_case(text):
-    pass
+    new_string = ""
+    for char in text:
+        if char.isupper():
+            new_string += "_"
+            new_string += char.lower()
+        else:
+            new_string += char
+    return new_string
+print(to_snake_case("MyVariableName"))
 
 
 # CHALLENGE 3 ------------------------------------------------------------------
@@ -289,24 +327,25 @@ def analyse_text(text):
 if __name__ == "__main__":
 
     print("=== Activity 1: Iterating ===")
-    print_each_character("hi there")
-    print()
-    print_with_positions("hello")       # fix this above first
-    print()
-    print(string_length_manual("hello")) # complete this above first
-    print()
+    # print_each_character("hi there")
+    # print()
+    # print_with_positions("hello")       # fix this above first
+    # print()
+    # print(string_length_manual("hello")) # complete this above first
+    # print()
 
-    print("\n=== Activity 2: Searching ===")
-    print(count_letter_a("banana"))
-    print(count_letter_a("Apple"))
-    print(count_vowels("Eagle"))        # should be 2 after your fix
-    print(is_all_digits("12345"))       # complete this above first
-    print(is_all_digits("123a5"))
+    # print("\n=== Activity 2: Searching ===")
+    # print(count_letter_a("banana"))
+    # print(count_letter_a("Apple"))
+    # print(count_vowels("Eagle"))        # should be 2 after your fix
+    # print(is_all_digits("12345"))       # complete this above first
+    # print(is_all_digits("123a5"))
+    # print(is_all_digits(""))
 
-    print("\n=== Activity 3: String methods ===")
-    print(remove_spaces("hello world")) # fix the bug above first
-    print(make_acronym("North Atlantic Treaty Organisation"))
+    # print("\n=== Activity 3: String methods ===")
+    # print(remove_spaces("hello world")) # fix the bug above first
+    # print(make_acronym("North Atlantic Treaty Organisation"))
 
-    print("\n=== Activity 4: Slicing and building ===")
-    print(reverse_string("racecar"))
-    print(create_username("Ada Lovelace"))  # complete this above first
+    # print("\n=== Activity 4: Slicing and building ===")
+    # print(reverse_string("racecar"))
+    # print(create_username("Ada Lovelace"))  # complete this above first
