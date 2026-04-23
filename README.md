@@ -1,72 +1,77 @@
 # Learning Strings with PRIMM
 
-## Why PRIMM with Strings?
-Strings are sequences of characters, making them perfect for practicing loops while learning text processing. This lesson uses **PRIMM methodology**:
+Strings are sequences of characters, which makes them a great way to practise
+loops, indexing, and building new values from existing ones. This lesson uses
+the **PRIMM methodology**:
 
-- **PREDICT**: Think about what the code will do
-- **RUN**: Execute and check your predictions
-- **INVESTIGATE**: Experiment with different inputs
-- **MODIFY**: Fix broken code or add features
-- **MAKE**: Create new functions from scratch
-
-### In your pairs, get as far as you can. It's not a race. There is meant to be something here for everyone. Completing the first tasks and having an understanding of how we can work with string is the most important thing.
-
----
-
-## Activity 1: Basic String Exploration 
-
-### Task: Understanding Strings as Sequences
-
-* **PREDICT**: Look at the `print_each_character` function. What will happen when you call `print_each_character("hello")`? How many lines will be printed?
-* **RUN**: Execute the code and verify your prediction.
-* **INVESTIGATE**: Try with `"a"`, `""` (empty string), and `"Python"`. What happens with each?
-* **MODIFY**: Fix the `print_with_positions` function to show both the position and character.
-* **MAKE**: Complete the `string_length_manual` function to count characters without using `len()`.
+| Step | What you do |
+|---|---|
+| **Predict** | Read the code and write down what you think it will do |
+| **Run** | Execute it and check your prediction |
+| **Investigate** | Try different inputs and dig into *why* it behaves that way |
+| **Modify** | Fix a bug or extend the function as instructed |
+| **Make** | Write your own function from scratch |
 
 ---
 
-## Activity 2: Character Analysis (20 mins)
+## Files in this repo
 
-### Task: Examining Individual Characters
-
-* **PREDICT**: Look at the `count_letter_a` function. How many 'a's do you think are in "banana"? What about uppercase vs lowercase?
-* **RUN**: Test with `count_letter_a("banana")` and `count_letter_a("Apple")`.
-* **INVESTIGATE**: Try different words. How does the function handle uppercase letters?
-* **MODIFY**: Fix the `count_vowels` function so it counts both uppercase and lowercase vowels.
-* **MAKE**: Complete the `is_all_digits` function to check if a string contains only numbers.
+| File | Purpose |
+|---|---|
+| `snippet_examples.py` | Short warm-up snippets shown on the projector |
+| `exercises.py` | Your main working file — four activities plus extension challenges |
 
 ---
 
-## Activity 3: String Building and Modification (25 mins)
+## What each activity covers
 
-### Task: Creating New Strings from Existing Ones
+**Activity 1 — Iterating over strings**
+How to step through a string character by character using a `for` loop, and
+how to use `range(len(...))` when you also need the index.
 
-* **PREDICT**: Look at the `reverse_string` function. What will `reverse_string("cat")` return? Trace through the loop step by step.
-* **RUN**: Test your prediction with several different words.
-* **INVESTIGATE**: Try with palindromes like "racecar" or "level". What do you notice?
-* **MODIFY**: Fix the `remove_spaces` function to properly remove all spaces from a string.
-* **MAKE**: Complete the `make_acronym` function to create acronyms from phrases (e.g., "North Atlantic Treaty Organisation" → "NATO").
+**Activity 2 — Searching strings**
+Looking at characters one by one to count or check things. Introduces the
+pattern of building a counter inside a loop.
 
----
+**Activity 3 — String methods**
+Using built-in methods: `.upper()`, `.lower()`, `.strip()`, `.replace()`,
+and `.split()`. Covers chaining methods together.
 
-## Activity 4: Slicing for Practical Tasks (Make a Username)
+**Activity 4 — Slicing and building**
+Getting parts of a string with `[start:end]` notation, and building new
+strings by accumulating characters.
 
-* **MAKE**: Challenge: Use string slicing to create a username.
-* **MAKE**: The format should be: first letter of the first name + entire last name.
-
----
-
-## Final Reflection 
-
-* **String Operations**: What are the key ways to process strings character by character?
-* **Building vs Searching**: When do you build new strings vs analyse existing ones?
-* **Common Patterns**: What loop patterns did you use repeatedly (accumulation, searching, building)?
-* **Real Applications**: Where might these string processing skills be useful?
+**Extension challenges** *(if you finish early)*
+Palindrome checker, camelCase to snake_case converter, and a text analyser.
 
 ---
 
-## Extension Challenges
+## Getting started
 
-* **Challenge 1**: Create a function that checks if a string is a palindrome (reads the same forwards and backwards).
-* **Challenge 2**: Write a function that converts "camelCase" to "snake_case".
-* **Challenge 3**: Create a simple text analyser that counts sentences, words, and average word length.
+1. Open `exercises.py` and work through the activities in order.
+2. Run the file at any point with:
+   ```bash
+   python exercises.py
+   ```
+3. The bottom of `exercises.py` has a test section — you will see errors or
+   `None` values for any function you have not completed yet. That is normal.
+
+---
+
+## Key concepts to leave with
+
+- Strings are sequences — you can loop over them and index into them just
+  like lists
+- `string[i]` gives you one character; `string[start:end]` gives you a slice
+- String methods (`.split()`, `.strip()`, `.replace()`, etc.) do not change
+  the original string — they return a new one
+- The accumulation pattern (building up a result string inside a loop) is
+  used constantly in real Python code
+
+---
+
+## Additional resources
+
+- [Python docs — Strings](https://docs.python.org/3/tutorial/introduction.html#strings)
+- [Python docs — String methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [Real Python — Strings and character data](https://realpython.com/python-strings/)

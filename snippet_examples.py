@@ -1,71 +1,91 @@
-# Snippet 1
+# ------------------------------------------------------------------------------
+# SECTION 1: Indexing — getting one character by position
+# ------------------------------------------------------------------------------
+
+# Snippet 1 — What does [0] give you?
 name = "Ada Lovelace"
 print(name[0])
 
-# Snippet 2
+# Snippet 2 — Negative indexes count from the end
+name = "Ada Lovelace"
+print(name[-1])
+
+# Snippet 3 — What happens if you use an index equal to the length?
+name = "Ada Lovelace"
+print(name[3])
+
+
+# ------------------------------------------------------------------------------
+# SECTION 2: Slicing — getting a chunk of characters
+# ------------------------------------------------------------------------------
+
+# Snippet 4 — Slice from the start
+text = "Gaming is relaxing"
+print(text[:6])
+
+# Snippet 5 — Slice to the end
+text = "Gaming is relaxing"
+print(text[10:])
+
+# Snippet 6 — Negative slice from the end
+text = "Gaming is relaxing"
+print(text[-8:])
+
+
+# ------------------------------------------------------------------------------
+# SECTION 3: Iterating — stepping through a string character by character
+# ------------------------------------------------------------------------------
+
+# Snippet 7 — Loop directly over the string
 name = "Ada Lovelace"
 for char in name:
     print(char)
 
-# Snippet 3
-text = "Gaming is relaxing" 
-print(text[:3])
+# Snippet 8 — Loop using range and index
+name = "Ada"
+for i in range(len(name)):
+    print(i, name[i])
 
-# Snippet 4
-text = "Gaming is relaxing"
-slice = text[15:]  
-print(slice)
 
-# Snippet 5
-text = "Gaming is relaxing" 
-print(text[-3:])
+# ------------------------------------------------------------------------------
+# SECTION 4: String methods
+# ------------------------------------------------------------------------------
 
-# Snippet 6
+# Snippet 9 — .upper() and .lower()
 phrase = "coding gives your brain a workout"
 print(phrase.upper())
 
-# Snippet 7
-game = "Cyberpunk 2077" 
-release_year = 2020 
-print(f"My favorite game is {game}, released in {release_year}.")
+# Snippet 10 — .strip() removes whitespace from both ends
+title = "  THE HANGOVER  "
+print(title.strip())
 
-# Snippet 8
-part1 = "Stream"
-part2 = "is"
-part3 = " good"
-print(part1 + "ing " + part2 + part3)
-
-# Snippet 9
-part1 = "Stream"
-part2 = "is"
-part3 = " good"
-sentence = part1 + "ing " + part2 + part3
-print(sentence)
-
-# Snippet 10
-colours = "red,blue,green" 
-colour_list = colours.split(",")
-print(colour_list[2])
-
-# Snippet 11
-title = " THE HANGOVER "
-edited_title = title.strip().lower() 
-
-# Snippet 12
-price = 49.99 
-print(f"The item is on sale! Was: ${price}, Now: ${price - 15.00}")
-
-# Snippet 13
-url = "[www.youtube.com/watch?v=dQw4](https://www.youtube.com/watch?v=dQw4)" 
-new_url = url.replace("youtube", "invidious") 
+# Snippet 11 — .replace() swaps one part for another
+url = "www.youtube.com/watch?v=dQw4"
+new_url = url.replace("youtube", "invidious")
 print(new_url)
 
-# Snippet 14
-message = "HELLO_WORLD_123"
-part = message.split("_")
-print(part[1].lower())
+# Snippet 12 — .split() breaks a string into a list
+colours = "red,blue,green"
+colour_list = colours.split(",")
+print(colour_list)
+print(colour_list[2])
 
-# Snippet 15
-user_input = " I love python! " 
-cleaned_input = user_input.strip().replace("love", "♥").capitalize() 
-print(cleaned_input)
+
+# ------------------------------------------------------------------------------
+# SECTION 5: Building and formatting strings
+# ------------------------------------------------------------------------------
+
+# Snippet 13 — Concatenation with +
+part1 = "Stream"
+part2 = "ing is good"
+print(part1 + part2)
+
+# Snippet 14 — f-strings
+game = "Cyberpunk 2077"
+release_year = 2020
+print(f"My favourite game is {game}, released in {release_year}.")
+
+# Snippet 15 — Chaining methods
+user_input = " I love python! "
+cleaned = user_input.strip().replace("love", "♥").capitalize()
+print(cleaned)
